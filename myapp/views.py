@@ -6,6 +6,10 @@ def main(request: HttpRequest) -> HttpResponse:
      return HttpResponse("основная страница, на которой будет список всех статей.")
 
 
+def my_feed(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Cтраница, на которой будут только статьи по темам, на которые подписан пользователь.")
+
+
 def article_id(request: HttpRequest, article_id: int) -> HttpResponse:
     return HttpResponse(f"Cтраницa, на которой будет отображаться статья по id #{article_id}")
 
