@@ -23,4 +23,5 @@ urlpatterns = [
     path('my-feed/', my_feed),
     path('articles/', include('myapp.article_id_url')),
     path('admin/', admin.site.urls),
+    path('articles/', include('myapp.urls')),
 ]

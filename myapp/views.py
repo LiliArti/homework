@@ -21,3 +21,34 @@ def update(request: HttpRequest, article_id: int) -> HttpResponse:
 
 def delete(request: HttpRequest, article_id: int) -> HttpResponse:
     return HttpResponse(f"Адрес, который мы будем использовать для удаления статьи #{article_id}")
+
+
+def create_article(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница, на которой мы будем создавать новые статьи.")
+
+def list_topics(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница с перечнем всех тем на сайте.")
+
+def articles_by_topic(request: HttpRequest, topic_id: int) -> HttpResponse:
+    return HttpResponse(f"Страница со всеми статьями по теме #{topic_id}.")
+
+def subscribe_to_topic(request: HttpRequest, topic_id: int) -> HttpResponse:
+    return HttpResponse(f"Адрес для подписки на тему #{topic_id}.")
+
+def unsubscribe_from_topic(request: HttpRequest, topic_id: int) -> HttpResponse:
+    return HttpResponse(f"Адрес для отписки от темы #{topic_id}.")
+
+def user_profile(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница с данными пользователя и перечнем его подписок.")
+
+def register(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница регистрации нового пользователя.")
+
+def set_password(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница с изменением пароля.")
+
+def login_view(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Страница для входа на сайт.")
+
+def logout_view(request: HttpRequest) -> HttpResponse:
+    return HttpResponse("Адрес для выхода с сайта.")
