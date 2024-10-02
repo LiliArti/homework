@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpRequest
+from django.utils import timezone
 
 
 def main(request: HttpRequest) -> HttpResponse:
@@ -52,3 +53,11 @@ def login_view(request: HttpRequest) -> HttpResponse:
 
 def logout_view(request: HttpRequest) -> HttpResponse:
     return HttpResponse("Адрес для выхода с сайта.")
+
+
+def articles_by_month(request: HttpRequest, year: int, month: int) -> HttpResponse:
+    try:
+        date = timezone.datetime(year, month, 1)
+    except ValueError:
+        return HttpResponse("Ошибка: недопустимая дата.", status=404)
+    return HttpResponse(f"Страница, на которой будут статьи за {month}/{year}.")

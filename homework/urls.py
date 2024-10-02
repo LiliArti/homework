@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import main, my_feed
+from myapp.views import main, my_feed, articles_by_month
 
 urlpatterns = [
     path('', main),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('articles/', include('myapp.article_id_url')),
     path('admin/', admin.site.urls),
     path('articles/', include('myapp.urls')),
+    path('<int:year>/<int:month>/', articles_by_month, name='articles_by_month'),
 ]
